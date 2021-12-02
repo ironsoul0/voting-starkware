@@ -47,7 +47,6 @@ export function IncrementCounter({ contract }: { contract?: Contract }) {
           <h2>Latest Transaction</h2>
           <p>Status: {transactionStatus?.code}</p>
           <p>
-            Hash: <VoyagerLink.Transaction transactionHash={hash} />
           </p>
         </div>
       )}

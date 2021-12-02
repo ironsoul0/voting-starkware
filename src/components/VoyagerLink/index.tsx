@@ -26,13 +26,15 @@ function ContractLink({ contract }: ContractLinkProps): JSX.Element {
 
 interface TransactionLinkProps {
   transactionHash: string;
+  code: string;
 }
 
 function TransactionLink({
   transactionHash,
+  code,
 }: TransactionLinkProps): JSX.Element {
   const href = `https://goerli.voyager.online/tx/${transactionHash}`;
-  return <Link href={href}>{transactionHash}</Link>;
+  return <p><Link href={href}>{transactionHash.substr(0, 9)}...</Link> - {code}</p>;
 }
 
 interface BlockLinkProps {

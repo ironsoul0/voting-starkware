@@ -1,7 +1,18 @@
 import React from "react";
 import { getStarknet } from "@argent/get-starknet";
 import { StarknetState } from "./model";
-import { defaultProvider, ProviderInterface } from "starknet";
+import { Provider, ProviderInterface } from "starknet";
+
+export const mainnetProvider = new Provider({ network: "georli-alpha" });
+
+const DEVNET = "http://localhost:5000";
+
+export const devnet = (provider: ProviderInterface): ProviderInterface => {
+  provider.baseUrl = DEVNET;
+  provider.feederGatewayUrl = `${DEVNET}/feeder_gateway`;
+  provider.gatewayUrl = `${DEVNET}/gateway`;
+  return provider;
+}
 
 interface StarknetManagerState {
   account?: string;
@@ -40,7 +51,7 @@ function reducer(
 export function useStarknetManager(): StarknetState {
   const starknet = getStarknet({ showModal: false });
   const [state, dispatch] = React.useReducer(reducer, {
-    library: defaultProvider,
+    library: mainnetProvider,
   });
 
   const { account, library } = state;

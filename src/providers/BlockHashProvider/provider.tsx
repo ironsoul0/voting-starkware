@@ -24,6 +24,7 @@ export function BlockHashProvider({
 
   React.useEffect(() => {
     fetchBlockHash();
+
     const intervalId = setInterval(() => {
       fetchBlockHash();
     }, interval ?? 5000);
