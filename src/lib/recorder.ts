@@ -5,7 +5,7 @@ import { useStarknet } from "../providers/StarknetProvider";
 import RECORDER from "./abi/result_recorder_abi.json";
 
 const ADDRESS =
-  "0x0635f787e30bb2b6f15a08cc3bd11a75b2e6cde907297ac229ec99a83c72a8be";
+  "0x0746c1e1e08fe54fdc055e02897e8450c6483d2e979cdfe39904f7c630a01657";
 
 export function useRecorderContract(): Contract | undefined {
   const { library } = useStarknet();

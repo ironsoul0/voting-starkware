@@ -5,7 +5,7 @@ import { useStarknet } from "../providers/StarknetProvider";
 import VOTER from "./abi/voter_modified_abi.json";
 
 const ADDRESS =
-  "0x079128aa0a94104fa16be8f9de5009e0edb26356ee5107683f813d00b9e54279";
+  "0x070878e2ebb6b40b2e58832850e22b17d282dcaa52584dff0866c136e505b252";
 
 export function useVotingContract(): Contract | undefined {
   const { library } = useStarknet();

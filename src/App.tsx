@@ -45,7 +45,7 @@ function App() {
   }
 
   useEffect(() => {
-    if (txStatus?.code === "REJECTED" || txStatus?.code === "NOT_RECEIVED") {
+    if (txStatus?.code === "REJECTED") {
       setCreatedPoll({ loading: false, error: true, value: "" })
     } else if (txStatus?.code === 'PENDING') {
       setCreatedPoll(p => ({ ...p, loading: false, error: false }))
