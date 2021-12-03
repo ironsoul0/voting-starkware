@@ -57,7 +57,7 @@ function App() {
     if (code === "PENDING") {
       setVotingLoading(false);
       alert("Voted succesfully!");
-    } else if (code === "REJECTED" || code === "NOT_RECEIVED") {
+    } else if (code === "REJECTED") {
       setVotingLoading(false);
       alert("Error while voting!");
     }
